@@ -42,18 +42,20 @@ class QuotesDetails extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(width: 5),
-              SizedBox(
-                height: 40,
-                child: ListView.builder(
-                  itemCount: entity.tags?.length ?? 1,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: QuotesTagsMolecule(
-                            tags: entity.tags?[index] ?? ''));
-                  },
+              Flexible(
+                child: SizedBox(
+                  height: 40,
+                  child: ListView.builder(
+                    itemCount: entity.tags?.length ?? 1,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: QuotesTagsMolecule(
+                              tags: entity.tags?[index] ?? ''));
+                    },
+                  ),
                 ),
               ),
             ],
