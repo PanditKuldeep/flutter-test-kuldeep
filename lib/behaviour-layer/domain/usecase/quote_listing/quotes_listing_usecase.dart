@@ -8,9 +8,9 @@ import 'package:srijan_technologies_assessment/behaviour-layer/domain/repository
 
 class QuotesListingUseCase extends BaseUseCase<BaseError,
     QuotesListingUseParams, List<QuotesListingEntity>> {
-  QuotesRepository quotesRepository;
+  final QuotesRepository quotesRepository;
 
-  QuotesListingUseCase(this.quotesRepository);
+  QuotesListingUseCase({required this.quotesRepository});
 
   @override
   Future<Either<BaseError, List<QuotesListingEntity>>> execute(

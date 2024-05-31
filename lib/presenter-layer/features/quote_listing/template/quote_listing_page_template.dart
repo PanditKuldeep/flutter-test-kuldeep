@@ -23,7 +23,6 @@ class QuoteListingPageView extends BasePageViewWidget {
           unableLoader: response.value?.status == null ||
               response.value?.status == Status.loading,
           isSuccess: response.value?.status == Status.success,
-          //successWidget: Text(response.value?.data?.first.id ?? ''),
           successWidget: Expanded(
             child: ListView.builder(
                 itemCount: response.value?.data?.length ?? 0,
@@ -46,7 +45,7 @@ class QuoteListingPageView extends BasePageViewWidget {
                 }),
           ),
           failureWidget: Text(
-            "${response.value?.appError?.error.message ?? ""} ${response.value?.appError?.type.name ?? ""}",
+            response.value?.appError?.error.message ?? "",
           ),
         ),
       ],

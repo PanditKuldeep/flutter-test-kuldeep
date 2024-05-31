@@ -27,13 +27,6 @@ class QuotesListingNotifier extends _$QuotesListingNotifier {
       createCall: () => getQuotesListingUseCase.execute(params: params),
     ).asFlow().listen(
       (result) {
-        if (kDebugMode) {
-          print("status: ${result.status}");
-          print("response: ${result.data?.first.id}");
-          result.data?.forEach((item){
-            print("data: ${item.id}");
-          });
-        }
         state = AsyncValue.data(result);
       },
     );

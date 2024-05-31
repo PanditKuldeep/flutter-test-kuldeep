@@ -11,5 +11,5 @@ class NetworkCodeAndMessage {
   static const String badCertificateError = "Bad Certificate Server Error";
   static const String serverResponseError = "Server Response Error";
   static const String unknownError = "Unknown Error";
-  static const String internetConnectionError = "Connection to API server failed due to internet connection";
+  static const String internetConnectionError = "Connection to API server Failed Due to Internet Connection";
 }

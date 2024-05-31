@@ -12,14 +12,15 @@ import 'package:common/behaviour-layer/shared/utils/validator.dart';
 
 class QuoteDetailsUseCase
     extends BaseUseCase<BaseError, QuoteDetailsUseParams, QuoteDetailsEntity> {
-  QuotesRepository quotesRepository;
+  final QuotesRepository quotesRepository;
 
-  QuoteDetailsUseCase(this.quotesRepository);
+  QuoteDetailsUseCase({required this.quotesRepository});
 
   @override
   Future<Either<BaseError, QuoteDetailsEntity>> execute(
       {required QuoteDetailsUseParams params}) async {
-    return quotesRepository.getQuoteDetailsById(selectedQuoteId: params.selectedQuoteId);
+    return quotesRepository.getQuoteDetailsById(
+        selectedQuoteId: params.selectedQuoteId);
   }
 }
 

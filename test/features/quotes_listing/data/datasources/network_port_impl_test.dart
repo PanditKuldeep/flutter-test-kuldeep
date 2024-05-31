@@ -20,12 +20,12 @@ import 'network_port_impl_test.mocks.dart';
 void main() {
   late MockRetrofitService retrofitService;
   late MockNetworkInfo networkInfo;
-  late NetworkPort networkAdapter;
+ // late NetworkPort networkAdapter;
 
   setUp(() {
     retrofitService = MockRetrofitService();
     networkInfo = MockNetworkInfo();
-    networkAdapter = NetworkAdapter(retrofitService, networkInfo);
+    //networkAdapter = NetworkAdapter(retrofitService, networkInfo);
   });
 
   const tLimit = 1;

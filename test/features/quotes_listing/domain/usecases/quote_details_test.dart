@@ -15,7 +15,7 @@ void main() {
 
   setUp(() {
     mockQuotesRepository = MockQuotesRepository();
-    useCase = QuoteDetailsUseCase(mockQuotesRepository);
+    useCase = QuoteDetailsUseCase(quotesRepository: mockQuotesRepository);
   });
 
   String tSelectedId = 'An5NAXPrbN';

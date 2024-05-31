@@ -7,7 +7,7 @@ abstract class NetworkInfo {
 class NetworkInfoImpl implements NetworkInfo {
   final InternetConnection internetConnection;
 
-  NetworkInfoImpl(this.internetConnection);
+  NetworkInfoImpl({required this.internetConnection});
 
   @override
   Future<bool> get isConnected => internetConnection.hasInternetAccess;

@@ -22,13 +22,18 @@ class _AsyncBuilderState extends State<AsyncBuilder> {
   Widget build(BuildContext context) {
     if (widget.unableLoader) {
       return Center(
-        child: CircularProgressIndicator(color: Colors.black,),
+        child: CircularProgressIndicator(
+          color: Colors.black,
+        ),
       );
     }
     if (widget.isSuccess) {
       return widget.successWidget;
     } else {
-      return widget.failureWidget ?? Container();
+      return Center(
+            child: widget.failureWidget ??
+          SizedBox.shrink(),
+          );
     }
   }
 }

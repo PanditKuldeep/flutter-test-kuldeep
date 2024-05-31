@@ -66,7 +66,7 @@ final getRetrofitServiceProvider =
 );
 
 typedef GetRetrofitServiceRef = AutoDisposeProviderRef<RetrofitService>;
-String _$getNetworkInfoHash() => r'ace8e045b1820fe08ead60261216a710cecd39dd';
+String _$getNetworkInfoHash() => r'3aec30746ac117d687cb735a05ac1986fd998540';
 
 /// See also [getNetworkInfo].
 @ProviderFor(getNetworkInfo)
@@ -81,7 +81,7 @@ final getNetworkInfoProvider = AutoDisposeProvider<NetworkInfo>.internal(
 );
 
 typedef GetNetworkInfoRef = AutoDisposeProviderRef<NetworkInfo>;
-String _$getNetworkServiceHash() => r'04c78ba5788714de71fe11a86ccd405e5014e1b2';
+String _$getNetworkServiceHash() => r'8ea2f58827275096b14a160df48cf45c3ac8be7d';
 
 /// See also [getNetworkService].
 @ProviderFor(getNetworkService)

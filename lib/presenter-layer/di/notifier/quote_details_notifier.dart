@@ -28,11 +28,6 @@ class QuoteDetailsNotifier extends _$QuoteDetailsNotifier {
       createCall: () => getQuoteDetailsUseCase.execute(params: params),
     ).asFlow().listen(
       (result) {
-        if (kDebugMode) {
-          print("status: ${result.status}");
-          print("quotesId: ${result.appError?.error.message}");
-          print("quotesId: ${result.data?.id}");
-        }
         state = AsyncValue.data(result);
       },
     );

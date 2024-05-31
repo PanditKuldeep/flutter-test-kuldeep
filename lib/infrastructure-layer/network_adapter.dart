@@ -9,59 +9,37 @@ import 'package:srijan_technologies_assessment/behaviour-layer/domain/entity/quo
 import 'package:srijan_technologies_assessment/infrastructure-layer/service/retrofit_service.dart';
 
 class NetworkAdapter extends NetworkPort {
-  RetrofitService retrofitService;
-  NetworkInfo networkInfo;
+  final RetrofitService retrofitService;
 
-  NetworkAdapter(this.retrofitService, this.networkInfo);
+
+  NetworkAdapter({required this.retrofitService});
 
   @override
   Future<Either<NetworkError, List<QuotesListingEntity>>> getQuotesResponse(
       int limit) async {
-    bool isNetwork = await networkInfo.isConnected;
-    if (isNetwork) {
-      var response =
-          await safeApiCall(retrofitService.getQuotesResponse(limit));
-      return response.fold(
-        (l) {
-          return Left(l);
-        },
-        (r) => Right(
-          r.data.map((e) => e.transform()).toList(),
-        ),
-      );
-    } else {
-      return Left(
-        NetworkError(
-            message: NetworkCodeAndMessage.internetConnectionError,
-            httpError: NetworkCodeAndMessage.unknownErrorCode,
-            cause: Exception(NetworkCodeAndMessage.internetConnectionError)),
-      );
-    }
+    var response = await safeApiCall(retrofitService.getQuotesResponse(limit));
+    return response.fold(
+      (l) {
+        return Left(l);
+      },
+      (r) => Right(
+        r.data.map((e) => e.transform()).toList(),
+      ),
+    );
   }
 
   @override
   Future<Either<NetworkError, QuoteDetailsEntity>> getQuoteDetailsResponseById(
       {required String selectedQuoteId}) async {
-    bool isNetwork = await networkInfo.isConnected;
-
-    if (isNetwork) {
-      var response = await safeApiCall(
-          retrofitService.getQuoteDetailsResponse(selectedQuoteId));
-      return response.fold(
-        (l) {
-          return Left(l);
-        },
-        (r) => Right(
-          r.data.transform(),
-        ),
-      );
-    } else {
-      return Left(
-        NetworkError(
-            message: NetworkCodeAndMessage.internetConnectionError,
-            httpError: NetworkCodeAndMessage.unknownErrorCode,
-            cause: Exception(NetworkCodeAndMessage.internetConnectionError)),
-      );
-    }
+    var response = await safeApiCall(
+        retrofitService.getQuoteDetailsResponse(selectedQuoteId));
+    return response.fold(
+      (l) {
+        return Left(l);
+      },
+      (r) => Right(
+        r.data.transform(),
+      ),
+    );
   }
 }

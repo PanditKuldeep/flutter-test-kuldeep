@@ -7,7 +7,7 @@ part of 'domain_module.dart';
 // **************************************************************************
 
 String _$getQuotesListingUseCaseHash() =>
-    r'42e2160acc63951dd254d2edfc2119ebeaadf383';
+    r'6eb10883177cdd8b0cec85ad375949f2ee06f9d4';
 
 /// See also [getQuotesListingUseCase].
 @ProviderFor(getQuotesListingUseCase)
@@ -25,7 +25,7 @@ final getQuotesListingUseCaseProvider =
 typedef GetQuotesListingUseCaseRef
     = AutoDisposeProviderRef<QuotesListingUseCase>;
 String _$getQuoteDetailsUseCaseHash() =>
-    r'a37d94d456b87c6ea190e2f1452626a45a4fbdf6';
+    r'c469c7f8a02f3d71c57f4146d39cb6b96e1dbc28';
 
 /// See also [getQuoteDetailsUseCase].
 @ProviderFor(getQuoteDetailsUseCase)

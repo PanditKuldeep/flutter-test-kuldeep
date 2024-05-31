@@ -7,7 +7,7 @@ part of 'data_module.dart';
 // **************************************************************************
 
 String _$getQuotesRepositoryHash() =>
-    r'69b09a675571f3ab8dd717412fde9810426843ff';
+    r'1c58e7fc8e60ce64a9c2b6077ef047738733b32f';
 
 /// See also [getQuotesRepository].
 @ProviderFor(getQuotesRepository)

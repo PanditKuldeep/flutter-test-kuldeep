@@ -20,7 +20,8 @@ void main() {
   setUp(() {
     remoteDataSource = MockNetworkPort();
     networkInfo = MockNetworkInfo();
-    repository = QuotesRepositoryImpl(remoteDataSource);
+    repository = QuotesRepositoryImpl(
+        networkPort: remoteDataSource, networkInfo: networkInfo);
   });
 
   void runTestsOnline(Function body) {

@@ -7,8 +7,10 @@ part 'domain_module.g.dart';
 
 @riverpod
 QuotesListingUseCase getQuotesListingUseCase(GetQuotesListingUseCaseRef ref) =>
-    QuotesListingUseCase(ref.read(getQuotesRepositoryProvider));
+    QuotesListingUseCase(
+        quotesRepository: ref.read(getQuotesRepositoryProvider));
 
 @riverpod
 QuoteDetailsUseCase getQuoteDetailsUseCase(GetQuoteDetailsUseCaseRef ref) =>
-    QuoteDetailsUseCase(ref.read(getQuotesRepositoryProvider));
+    QuoteDetailsUseCase(
+        quotesRepository: ref.read(getQuotesRepositoryProvider));

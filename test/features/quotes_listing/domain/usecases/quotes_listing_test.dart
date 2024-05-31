@@ -14,7 +14,7 @@ void main() {
 
   setUp(() {
     mockQuotesRepository = MockQuotesRepository();
-    useCase = QuotesListingUseCase(mockQuotesRepository);
+    useCase = QuotesListingUseCase(quotesRepository: mockQuotesRepository);
   });
 
   const tLimit = 5;

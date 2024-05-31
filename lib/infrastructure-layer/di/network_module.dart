@@ -37,11 +37,9 @@ RetrofitService getRetrofitService(GetRetrofitServiceRef ref) {
 }
 
 @riverpod
-NetworkInfo getNetworkInfo(GetNetworkInfoRef ref) =>
-    NetworkInfoImpl(ref.read(getInternetConnectionProvider));
+NetworkInfo getNetworkInfo(GetNetworkInfoRef ref) => NetworkInfoImpl(
+    internetConnection: ref.read(getInternetConnectionProvider));
 
 @riverpod
-NetworkPort getNetworkService(GetNetworkServiceRef ref) => NetworkAdapter(
-      ref.read(getRetrofitServiceProvider),
-      ref.read(getNetworkInfoProvider),
-    );
+NetworkPort getNetworkService(GetNetworkServiceRef ref) =>
+    NetworkAdapter(retrofitService: ref.read(getRetrofitServiceProvider));

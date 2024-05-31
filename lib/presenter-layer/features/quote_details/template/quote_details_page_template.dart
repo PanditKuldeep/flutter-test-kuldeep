@@ -27,7 +27,7 @@ class QuoteDetailsPageView extends BasePageViewWidget {
                 entity: response.value?.data ?? QuoteDetailsEntity()),
           ),
           failureWidget: Text(
-            "${response.value?.appError?.error.message ?? ""} ${response.value?.appError?.type.name ?? ""}",
+            response.value?.appError?.error.message ?? "",
           ),
         ),
       ],
